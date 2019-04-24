@@ -124,7 +124,7 @@ func initSDL(appInit *appInit) (*appSettings,error) {
 
 	app.window, err = sdl.CreateWindow(appInit.title, sdl.WINDOWPOS_UNDEFINED,
 		sdl.WINDOWPOS_UNDEFINED,
-		appInit.width, appInit.height, sdl.WINDOW_SHOWN)
+		appInit.width, appInit.height, sdl.WINDOW_SHOWN|sdl.WINDOW_ALWAYS_ON_TOP)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to create window: %s\n", err)
 		return nil,err
